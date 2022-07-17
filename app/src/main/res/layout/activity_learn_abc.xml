@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LearnAbc">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLearn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/sky">
+
+
+        <ImageView
+            android:id="@+id/LearnAbcBack"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/back" />
+
+        //https://freesound.org/people/dersuperanton/packs/24677/
+
+        <LinearLayout
+            android:id="@+id/firstRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/A"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/a" />
+
+            <ImageView
+                android:id="@+id/B"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/b" />
+
+            <ImageView
+                android:id="@+id/C"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/c" />
+
+            <ImageView
+                android:id="@+id/D"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/d" />
+
+            <ImageView
+                android:id="@+id/E"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e" />
+
+            <ImageView
+                android:id="@+id/F"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/f" />
+
+            <ImageView
+                android:id="@+id/G"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/g" />
+
+            <ImageView
+                android:id="@+id/H"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/h" />
+
+            <ImageView
+                android:id="@+id/I"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/i" />
+
+
+
+            <ImageView
+                android:id="@+id/J"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/j" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/K"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/k" />
+
+            <ImageView
+                android:id="@+id/L"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/l" />
+
+            <ImageView
+                android:id="@+id/M"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/m" />
+
+            <ImageView
+                android:id="@+id/N"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/n" />
+
+            <ImageView
+                android:id="@+id/O"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/o" />
+
+            <ImageView
+                android:id="@+id/P"
+                android:layout_width="51dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/p" />
+
+            <ImageView
+                android:id="@+id/Q"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/q" />
+
+            <ImageView
+                android:id="@+id/R"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/r" />
+
+            <ImageView
+                android:id="@+id/S"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/s" />
+
+            <ImageView
+                android:id="@+id/T"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/t" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="200dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/U"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/u" />
+
+            <ImageView
+                android:id="@+id/V"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/v" />
+
+            <ImageView
+                android:id="@+id/W"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/w" />
+
+            <ImageView
+                android:id="@+id/X"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/x" />
+
+            <ImageView
+                android:id="@+id/Y"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/y" />
+
+            <ImageView
+                android:id="@+id/Z"
+                android:layout_width="60dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/z" />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
