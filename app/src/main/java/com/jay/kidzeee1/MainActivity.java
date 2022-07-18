@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     Button start;
     MediaPlayer Play;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +22,6 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-        Play = MediaPlayer.create(this , R.raw.background);
-
-        Play.start();
-
-
 
         start = findViewById(R.id.startBtn);
         start.setOnClickListener(new View.OnClickListener() {
@@ -43,24 +36,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Play = MediaPlayer.create(this , R.raw.background);
+        Play.start();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
-
-
         Play.start();
     }
 
     @Override
     protected void onRestart() {
             super.onRestart();
-
             Play.start();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-
         Play.stop();
     }
 }

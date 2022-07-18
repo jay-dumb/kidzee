@@ -55,6 +55,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
             holder.textView.setBackgroundResource(R.color.colorPrimaryDark);
         }
 
+        if (position == 1){
+
+        }
+
     }
 
     @Override

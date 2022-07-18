@@ -4,16 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import Adapter.Adapter;
 import Model.Number;
+import Utility.ClickSound;
 
 public class PairActivity extends AppCompatActivity {
 
@@ -21,12 +27,18 @@ public class PairActivity extends AppCompatActivity {
     private ArrayList<Number> integerArrayList;
     private ArrayList<Number> randomIntegerArrayList;
 
-
     private ArrayList<Number> mainIntegerArrayList;
     private Adapter adapter;
 
-    private static int selectedNum = 0;
-    private static int selectedNumPos = 0;
+    private static int selectedNum = -1;
+    private static int selectedNumPos = -1;
+
+    private LottieAnimationView lottieAnimationView;
+    private MaterialButton btnBack;
+
+    private ClickSound clickSound;
+    private static String RIGHT_SOUND = "RIGHT";
+    private static String WRONG_SOUND = "WRONG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +47,22 @@ public class PairActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_pair);
+
+        lottieAnimationView = findViewById(R.id.animationView);
+        lottieAnimationView.setVisibility(View.GONE);
+
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setVisibility(View.GONE);
+
+        clickSound = new ClickSound(PairActivity.this);
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PairActivity.this.onBackPressed();
+            }
+        });
 
         integerArrayList = new ArrayList<>();
         randomIntegerArrayList = new ArrayList<>();
@@ -52,48 +80,58 @@ public class PairActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
             @Override
             public void OnClick(int position) {
+                
+
 
                 Number number = mainIntegerArrayList.get(position);
 
-                if (selectedNum == 0){
+                if (selectedNumPos == position){
+                    selectedNum = -1;
+                    selectedNumPos = -1;
+                }
+
+                if (selectedNum == -1){
                     Number number1;
                     if (number.isCheck()){
                         number1 = new Number(number.getNum(), false);
-                        selectedNum = 0;
-                        selectedNumPos = 0;
+                        selectedNum = -1;
+                        selectedNumPos = -1;
                     }else{
                         number1 = new Number(number.getNum(), true);
                         selectedNum = number.getNum();
                         selectedNumPos = position;
                     }
                     mainIntegerArrayList.set(position,number1);
+
                 }else{
 
                     if (selectedNum == number.getNum()){
+
                         mainIntegerArrayList.remove(selectedNumPos);
-                        mainIntegerArrayList.remove(position);
+                        int i=0;
+                        for (Number a: mainIntegerArrayList){
+                            if (a.getNum()==selectedNum){
+                                mainIntegerArrayList.remove(i);
+                                break;
+                            }
+                            i++;
+                        }
+                        
+                        selectedNum = -1;
+                        selectedNumPos = -1;
 
-                        selectedNum = 0;
-                        selectedNumPos = 0;
-
-                        Toast.makeText(PairActivity.this, "Same", Toast.LENGTH_SHORT).show();
+                        clickSound.sound(RIGHT_SOUND);
                     }else{
-                        Toast.makeText(PairActivity.this, "Different", Toast.LENGTH_SHORT).show();
+                        clickSound.sound(WRONG_SOUND);
                     }
 
                 }
 
-
-
-
-                int j=0;
-                for (Number n:mainIntegerArrayList){
-                    if (n.isCheck()){
-
-                    }
-                    j++;
+                if (mainIntegerArrayList.isEmpty()){
+                    lottieAnimationView.setVisibility(View.VISIBLE);
+                    btnBack.setVisibility(View.VISIBLE);
+                    Toast.makeText(PairActivity.this, "Congratulation....", Toast.LENGTH_SHORT).show();
                 }
-
 
                 adapter.notifyDataSetChanged();
 

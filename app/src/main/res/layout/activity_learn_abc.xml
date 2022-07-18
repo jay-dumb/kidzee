@@ -10,7 +10,7 @@
         android:id="@+id/cardLearn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="@color/sky">
+        app:cardBackgroundColor="@color/colorPrimaryDark">
 
 
         <ImageView

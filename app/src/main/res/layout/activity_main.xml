@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
         android:text="Start"
-        android:textColor="@color/start" />
+        android:textColor="@color/colorAccent" />
 
     <Button
         android:id="@+id/quitBtn"
@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Quit"
-        android:textColor="@color/start" />
+        android:textColor="@color/colorAccent" />
 
 
 </RelativeLayout>

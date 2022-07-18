@@ -4,20 +4,19 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="5dp"
     android:id="@+id/cardView"
-    app:cardCornerRadius="10dp"
-    app:cardUseCompatPadding="true">
+    app:cardCornerRadius="0dp"
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@android:color/holo_blue_light">
 
     <TextView
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:gravity="center"
-        android:text="30sp"
+        android:text="25"
         android:background="@color/colorPrimaryDark"
         android:textAlignment="center"
-        android:textSize="40sp"
-        android:padding="10dp"
+        android:textSize="30sp"
         android:id="@+id/textView"></TextView>
 
 </com.google.android.material.card.MaterialCardView>
